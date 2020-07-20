@@ -1,0 +1,97 @@
+{% extends "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            display: grid;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .item {
+            /* border: 2px solid black; */
+            display: grid;
+            /* justify-content: center; */
+            justify-items: center;
+
+        }
+
+        img {
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+           
+
+        }
+
+        .info {
+            padding: 40px;
+            font-size: 25px;
+            display: grid;
+            /* justify-items: center; */
+            text-align: center;
+        }
+        .a{
+            display: grid;
+            justify-content: center;
+        }
+        @media only screen and (min-width: 200px) and (max-width:300px){
+            img{
+                height: 210px;
+                width: 210px;
+            }
+            .info{
+                    font-size: 14px;
+                }
+        }
+        @media only screen and (min-width: 300px) and (max-width:350px){
+                .info{
+                    font-size: 17px;
+                }
+        }
+        @media only screen and (min-width: 350px) and (max-width:440px){
+            .info{
+                font-size: 20px;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="static/my1.jpg" alt="">
+            <!-- <h1>Vishal Sharma</h1> -->
+            <div class="info">
+                <h1>Vishal Sharma</h1>
+                Developer<br>
+                Computer Science Engineer<br>
+                Data Science,Web Development<br>
+                Email-vishalsharma9785812846@gmail.com
+            </div>
+        </div>
+    </div>
+    </div>
+        <a href="{{url_for('home')}}" class="a">Home</a>
+</body>
+
+</html>
+{% endblock %}

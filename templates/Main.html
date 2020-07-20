@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url(static/Wallpaper.jpg);
+            font-family: 'Baloo Bhai 2', cursive;
+            display: grid;
+            grid-template-areas:
+                'nav nav nav nav'
+                'head head head head'
+                'form form form form'
+                'result result result result'
+            ;
+        }
+
+        .nav {
+            display: block;
+            grid-area: nav;
+        }
+
+        .head {
+            grid-area: head;
+            /* border: 2px solid black; */
+            text-align: center;
+            font-size: 63px;
+        }
+
+        .form {
+            grid-area: form;
+            /* border: 5px solid black;
+            border-radius: 25px; */
+            /* display: grid; */
+            grid-gap: 5px;
+            display: grid;
+            justify-items: center;
+
+        }
+
+        .result {
+            grid-area: result;
+            /* border: 2px solid blue; */
+            text-align: center;
+            font-size: 25px;
+        }
+
+
+        .group {
+            border: 5px solid black;
+            border-radius: 25px;
+
+            width: 700px;
+            padding: 5px;
+            margin: 11px auto;
+            font-size: 20px;
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .btn {
+            background-color: rgb(49, 49, 204);
+            color: azure;
+            margin: 8px auto;
+            width: 683px;
+            border-radius: 25px;
+            padding: 7px;
+        }
+
+        .btn:hover {
+            background-color: rgb(238, 157, 6);
+        }
+
+        @media only screen and (max-width:310px) {
+            .group {
+                display: grid;
+                width: 250px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+
+        @media only screen and (min-width: 301px) and (max-width:409px) {
+            .group {
+                display: grid;
+                width: 290px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 290px;
+            }
+        }
+
+        @media only screen and (min-width: 410px) and (max-width:500px) {
+            .group {
+                width: 360px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 355px;
+            }
+        }
+
+        @media only screen and (min-width: 480px) and (max-width:580px) {
+            .group {
+                width: 430px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 425px;
+            }
+        }
+
+        @media only screen and (min-width: 580px) and (max-width:680px) {
+            .group {
+                width: 520px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 515px;
+            }
+        }
+
+        @media only screen and (min-width: 680px) and (max-width:712px) {
+            .group {
+                width: 580px;
+                border: none;
+            }
+
+            .form {
+                border: 5px solid black;
+                border-radius: 25px;
+            }
+
+            .btn {
+                width: 576px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--This is Navbar-->
+    <div class="nav">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{url_for('home')}}">Insurance Price</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{{url_for('home')}}">Home <span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link"
+                        href="https://github.com/VishalSharma2001/Insurance_Price_Prediction">GitHub</a>
+                    <a class="nav-item nav-link" href="{{url_for('About')}}">About</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="head">Insurance Price Prediction</div>
+    <div class="form">
+        <form action="{{url_for('predict')}}" method="post">
+            <div class="group">
+                Age<input type="text" class="form-control" id="inputAddress" placeholder="Write Your Age" name='ag'
+                    required>
+
+                <label for="inputState">Sex</label>
+                <select id="inputState" class="form-control" name="gend">
+                    <option selected value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+
+                <label>Bmi<a class=".alert" onclick="myFunction()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                    <circle cx="8" cy="4.5" r="1"/>
+                  </svg></a></label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Enter Your BMI" name="bm"
+                    required>
+
+                <label for="inputState">Children</label>
+                <select id="inputState" class="form-control" name="child">
+                    <option selected>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+
+
+                <label for="inputState">Smoker</label>
+                <select id="inputState" class="form-control" name="smoke">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select>
+
+
+
+                <label for="inputState">Region</label>
+                <select id="inputState" class="form-control" name="Area">
+                    <option selected value="0">region-southwest</option>
+                    <option value="1">region-southeast</option>
+                    <option value="2">region-northwest</option>
+                    <option value="3">region-northeast</option>
+                </select>
+                <button class="btn">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    <br>
+    <div class="result">
+        <h1>{{prediction_text}}</h1>
+    </div>
+
+    <script>
+        function myFunction() {
+            alert("BMI is a ratio that is used by life insurance companies to estimate individual’s health and fitness condition:Value(0-1000)");
+        }
+    </script>
+</body>
+
+</html>
